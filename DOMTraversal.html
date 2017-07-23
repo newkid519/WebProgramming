@@ -1,17 +1,30 @@
 <html>
 <head>
-
+    <style type="text/css">
+        #header_id {
+            color: #f00;
+            display: none
+        }
+    </style>
 </head>
 <body>
+    <div id="header_id">
+        HEADER
+    </div>
     <button class="init">Initialize</button>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
     <script>
         $(function () {
             $btn = $("button.init");
-            $btn.click(function (event) {
-                alert("I am clicked!"); 
+            //$btn.click(function (event) {
+            //    alert("I am clicked!"); 
+            //});
+			$btn.on("click", function (event) {
+                //alert("I am clicked again!"); 
+                var hidden = $("#header_id");
+                hidden.show();
             });
-            $btn.html("Click Me");
+            $btn.html("Click Me to show header");
         });
     </script>
 </body>
