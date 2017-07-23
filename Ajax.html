@@ -1,0 +1,23 @@
+<html>
+<head>
+
+</head>
+<body>
+    <div>
+        <p id="output" />
+    </div>
+    <button class="init">Initialize</button>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.0/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "http://localhost/api/DVD",                
+                success: function (result) {
+                    $("#output").html("<strong>" + result + "</strong>");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
