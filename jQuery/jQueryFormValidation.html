@@ -1,0 +1,87 @@
+<html>
+<head>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js" ></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.js" ></script>
+	<script>
+		$().ready(function(){		
+			$("#myform").validate();
+
+			$("#mynewform").validate({
+				rules: { 
+					password: {
+						required : true,
+						min-length : 8
+					},
+					confirm-password: {
+						required : true,
+						min-length : 8,
+						equalTo: "#password"
+					}
+				}, 
+				messages: {
+					password: {
+						required : "meh",
+						min-length : "meh at least 8"
+					},
+					confirm-password: {
+						required : "meh",
+						min-length : "meh at least 8",
+						equalTo: "meh equal"
+					}
+				}}
+			);
+		});
+	</script>
+</head>
+<body align="center">
+    <h1>Validation with jQuery Validation Plugin</h1>
+    <h2>Basic Validation</h2>
+    <p>	
+	1. Must input firstname and lastname <br>	
+	2. Must be a valid email address<br>
+	</p>
+	<div>
+		<form name="myform" action="http://kennyzx.com/controller/newuser" method="post" >
+			<P>
+				<table align="center">
+					<!--tr><th>Label</th><th>Value</th></tr-->
+					<tr>
+						<td> <Label for="r1">MALE<Label> </td>
+						<td> <Input type="radio" name="sex" value="MALE" id="r1"> </td>
+					</tr>
+					<tr>
+						<td> <Label for="r2">FEMALE<Label> </td>
+						<td> <Input type="radio" name="sex" value="FEMALE" id="r2"> </td>
+					</tr>
+				</table>
+				
+				<Label for="firstname">First Name</Label>
+				<Input type="text" id="firstname" name="firstname" required> <BR><BR>
+				<Label for="lastname">Last Name</Label>
+				<Input type="text" id="lastname" name="lastname" required> <BR><BR>
+				<Label for="lastname">Age</Label>
+				<Input type="text" id="age" name="age"> <BR><BR>
+				<Label for="lastname">Email</Label>
+				<Input type="email" id="email" name="email" required> <BR><BR>
+				
+				<Input type="submit" value="Send">				
+				<Input type="reset">
+			</P>
+		</form>
+	</div>
+	<h2>Customized Validation</h2>
+    <p>	
+		1. Customized error messages <br>	
+		2. Confirm password equals to password<br>
+	</p>
+	<div>
+		<form name="mynewform" method="post">
+		    <Label for="password">Password</Label>
+			<Input type="text" id="password" name="password"> <BR><BR>
+			<Label for="confirm-password">Confirm Password</Label>
+			<Input type="text" id="confirm-password"> <BR><BR>
+			<Input type="submit" value="Send">	
+		</form>
+	</div>
+</body>
+</html>
