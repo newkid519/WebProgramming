@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>this in JavaScript</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+        console.log(this.innerWidth);
+        console.log("I'm evaluated in the initial global execution context!");
+
+        setTimeout(function () {
+            console.log("I'm NOT evaluated in the initial global execution context.");
+        }, 10000);
+    </script>
+</head>
+<body>
+    <a href="https://stackoverflow.com/questions/3127429/how-does-the-this-keyword-work/3127440#3127440">
+        How does the “this” keyword work?
+    </a>
+    <script>
+        var me = {
+            age: 33, name: "kennyzx", sayhello: function () {
+                console.log('hello from ' + this.name);
+            }
+        };
+
+        function myFun() {
+            console.log('myFun calls me and is passed thisArg' + this.name);
+        }
+        
+        myFun.call(me);
+
+        function Friend(age, name) {
+            this.age = age;
+            this.name = name;            
+        };
+
+        function display(f) {
+            console.log('My friend ' + f.name.toUpperCase() + ' is ' + f.age);
+        };
+
+        $(function () {
+            console.log('ready');
+            me.sayhello();
+            var friend = new Friend(1, "mary");
+            display(friend);
+        });
+        
+    </script>
+</body>
+</html>
