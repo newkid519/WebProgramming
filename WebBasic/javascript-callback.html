@@ -1,0 +1,61 @@
+<!DocType HTML>
+<html>
+<head>
+    <style type="text/css">
+	</style>
+</head>
+<body>
+	<a href="http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/">Understand JavaScript Callback Functions and Use Them</a>
+	<script>
+		//Pass anonymous function as parameter
+		var friends = ["Mike", "Adb", "Andy", "Rick"];
+		friends.forEach(function(eachName, index){
+			console.log(index + 1 + "." + eachName);
+		});
+		
+		//Pass named function as parameter
+		var allUserData = [];
+		function logStuff(userData){
+			if (typeof userData === "string")
+				console.log(userData);
+			else if (typeof userData == "object"){
+				for(var item in userData){
+					console.log(item + ":" + userData[item]);
+				}
+			}
+		}
+		
+		function getInput(options, callback){
+			allUserData.push(options);
+			if (typeof callback == "function"){
+				console.log("confirm callback is catually a callable function.");
+				callback(options);
+			}
+		}
+		
+		getInput({name: "kennyzx", speciality: "JavaScript"}, logStuff);	
+		
+		//Use the call or apply function to preserve 'this' object
+		var clientData = {
+			id : 094545,
+			fullName: "Not Set",
+			setUserName: function(firstName, lastName){
+			    //this refers to this object
+				this.fullName = firstName + " " + lastName;
+			}
+		}		
+		
+		function getUserInput(firstName, lastName, callback, callbackObj){
+			if (typeof callback === "function"){
+				callback.apply(callbackObj, [firstName, lastName]);
+			}
+		}
+		
+		getUserInput("Kenny", "Obama", clientData.setUserName, clientData);
+		console.log(clientData.fullName);
+		console.log(window.fullName);	
+
+		///
+	</script>
+
+</body>
