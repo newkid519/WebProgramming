@@ -1,0 +1,35 @@
+<!DocType HTML>
+<html>
+<head>
+	<title>Block scope</title>
+    <style type="text/css">
+	</style>
+</head>
+	
+<body>
+    <a href="http://javascriptissexy.com/understanding-es2015-in-depth-part-1-block-scope-with-let-and-const/">
+	Understanding ES2015 In Depth, Part 1: Block Scope with let and const</a>
+    <script>
+		function fn() {
+		  console.log(x); //undefined
+		  var x = 'function scope';
+
+		  if (true) {
+			var y = 'not block scope'
+		  }
+		  if (true) {
+		    //console.log(z); //used before declaration
+			let z = 'block scope';
+		  }
+
+		  function innerFn() {
+			console.log(x, y); // function scope not block scope
+			console.log(x, z); //cannot access z in block scope 
+		  }
+		  
+		  innerFn();
+		}
+		
+		fn();
+	</script>
+</body>
