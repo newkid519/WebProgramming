@@ -1,0 +1,65 @@
+<!DocType HTML>
+<html>
+<head>
+    <style type="text/css">
+	</style>
+</head>
+<body>
+	<a href="http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/">JavaScript Prototype in Plain Language</a>
+	<script>
+		function printStuff(myDocuments){
+			this.documents = myDocuments;
+		}
+		
+		printStuff.prototype.print = function(){
+			console.log(this.documents);
+		}
+		
+		var newObj = new printStuff("I am a new object and I can print.");
+		newObj.print();
+		
+		console.log(newObj.__proto__);
+		
+		
+		///////////////////////////
+		
+		function Plant(){
+			this.country = "Mexico";
+			this.isOrganic = true;
+		}
+		
+		Plant.prototype.showNameAndColor = function(){
+			console.log("I am a " + this.name + " and my color is " + this.color);
+		}
+		
+		Plant.prototype.amIOrganic = function(){
+			if (this.isOrganic)
+				console.log("I am organic, baby!");
+		}
+		
+		function Fruit(fruitName, fruitColor) {
+			this.name = fruitName;
+			this.color = fruitColor;
+		}
+		
+		Fruit.prototype = new Plant();
+		var aBanana = new Fruit("Banana", "Yellow");
+		console.log(aBanana.name);
+		aBanana.showNameAndColor();
+		aBanana.amIOrganic();
+		
+		//////
+		function People() {
+			this.superstar = "Michael Jackson";			
+		}
+		
+		People.prototype.athlete = "Tiger Woods";
+		
+		var famousPerson = new People();
+		famousPerson.superstar = "Steve Jobs";
+		console.log(famousPerson.superstar);
+		console.log(famousPerson.athlete);
+		
+		console.log(famousPerson.toString());
+	</script>
+</body>
