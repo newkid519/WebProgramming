@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<title>Local Storage</title>
+	<meta charset="utf-8">	
+</head>
+<body>
+	<form>
+		<input type="button" id="clear" value="Clear storage" />
+	</form>
+	<script>
+		window.onload = function() {
+			var clearButton = document.getElementById("clear");
+			clearButton.onclick = clearStorage;
+		}
+		
+		function clearStorage(){
+			console.log(localStorage.getItem("key1"));
+			console.log("btn clicked");
+			localStorage.clear();
+			console.log(localStorage.getItem("key1"));
+		}
+		
+		function tryLocalStorage() {
+			//on IE/Edge, the page needs to be opened with a 'real' web address that has a domain name
+			//otherwise, localStorage is not supported.
+			alert(window["localStorage"]); 
+			localStorage.setItem("key1", 123);
+			console.log(localStorage.getItem("key1"));
+			var item = {name: "kennyzx", age: 200};
+			localStorage.setItem("item1", JSON.stringify(item));
+			console.log(JSON.parse(localStorage.getItem("item1")).name);
+		}
+		
+		tryLocalStorage();
+	</script>
+</body>
+</html>
