@@ -1,0 +1,23 @@
+{
+  "name": "webprogramming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "purecss": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennyzx/WebProgramming.git"
+  },
+  "author": "kennyzx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennyzx/WebProgramming/issues"
+  },
+  "homepage": "https://github.com/kennyzx/WebProgramming#readme"
+}
