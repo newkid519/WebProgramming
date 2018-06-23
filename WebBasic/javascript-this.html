@@ -6,9 +6,8 @@
     <title>this in JavaScript</title>
 	<link rel="stylesheet" type="text/css" href="base.css">
 	<script src="../dist/main.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
     <script>
-        console.log(this.innerWidth);
+        console.log(`this.innerWidth = ${this.innerWidth}`);
         console.log("I'm evaluated in the initial global execution context!");
 
         setTimeout(function () {
