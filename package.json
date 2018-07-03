@@ -1,0 +1,30 @@
+{
+  "name": "webprogramming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "js-sha1": "^0.6.0",
+    "moment": "^2.22.2",
+    "purecss": "^1.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennyzx/WebProgramming.git"
+  },
+  "author": "kennyzx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kennyzx/WebProgramming/issues"
+  },
+  "homepage": "https://github.com/kennyzx/WebProgramming#readme"
+}
