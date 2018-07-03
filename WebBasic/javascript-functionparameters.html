@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<script>
+			function getValue(specialcase){
+				return specialcase + "abc";
+			}
+			function showValue(){
+			    var specialcase = 5;
+				document.getElementById("demo").innerHTML = getValue(specialcase);
+			}			
+		</script>
+		<button onclick="showValue()">Try it</button>
+		<p id="demo">Output</>
+	</body>
+</html>

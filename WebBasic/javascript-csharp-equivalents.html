@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="./css/jss.css" type="text/css" rel="stylesheet" />
+    <title>Some C# language perks</title>
+</head>
+<body>
+    <h1>The C# language I am familiar with</h1>
+    <div>var a1 = 3; </div>
+    <div>(a1 === 3) ? "true" : "false";</div>
+    <div class="output" id="output1"></div>
+
+    <div>Write hand made string.format </div>
+    <div>"{0} is dead, but {1} is alive! {0} {2}".format("ASP", "ASP.NET")</div>
+    <div class="output" id="output2"></div>
+
+    <script>
+        var a1 = 3;
+        var result1 = (a1 === 3) ? "true" : "false";
+        document.querySelector("#output1").innerHTML = result1;
+
+        if (!String.prototype.format) {
+            String.prototype.format = function () {
+                var args = arguments;
+                return this.replace(/{(\d+)}/g, function (match, number) {
+                    return typeof args[number] != 'undefined'
+                        ? args[number]
+                        : match
+                        ;
+                });
+            }
+        }
+
+        document.querySelector("#output2").innerHTML =
+            "{0} is dead, but {1} is alive! {0} {2}".format("ASP", "ASP.NET", "Good bye");
+
+        var str1 = "A dog Jumps over the Lazy dog";
+        var str2 = str1.replace("dog", "cat");
+        var str3 = str1.replace("Jumps", "flies").replace(/dog/g, "cat"); //this is a regular expression
+        var str4 = str1.lastIndexOf("dog");
+        var str5 = str1.replace(/jumps/i, "moves");
+        console.log(str2);
+        console.log(str5);
+
+        //ES2015
+        var name = "Bob", time = "today";
+        console.log(`Hello ${name}, how are you ${time}?`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+	<script>
+	function fn(){
+		if (window["localStorage"]){
+			localStorage.setItem("keyA", 123);
+			alert(localStorage.getItem("keyA"));
+			var item = {Hello: "World", myName: "kennyzx", myAge: 188};
+			localStorage.setItem("keyB", JSON.stringify(item));
+			alert(localStorage.getItem("keyB"));
+			alert(JSON.parse(localStorage.getItem("keyB")).myName);
+		}
+	}
+	
+	fn();
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <a href="https://stackoverflow.com/questions/31685262/not-recommended-to-use-use-strict-in-es6">
+        ES6 modules are always in strict mode.
+    </a>
+    <script>
+        "use strict";
+        var x = 3.14;
+        console.log(x);
+
+        function fn() {
+            //"use strict";
+            y = 3.14;
+            console.log(x, y);
+        }
+
+        //fn();
+
+        var obj = {};
+        Object.defineProperty(obj, "x", { value: 100, writable: false });
+        console.log(obj.x);
+        obj.x = 2;
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var o1 = { a: 22, b: "some value" };
+        var str = JSON.stringify(o1);
+        console.log(str);
+        var o2 = JSON.parse(str);
+        console.log(o1 == o2); //gives false
+        console.log(o1 === o2); //also gives false;
+
+        var a = [o1, o2];
+        str = JSON.stringify(a);
+        console.log(str);
+    </script>
+</body>
+</html>

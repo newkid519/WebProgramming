@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+</head>
+<body>
+    <a href="https://stackoverflow.com/questions/9329446/for-each-over-an-array-in-javascript">
+    foreach over an array in JavaScript</a>
+    <p id="carsOutput"></p>
+    <button id="btn">Examine the i value during iteration</button>
+    <script>
+        var a = [2, 34, 4, 56, 7, 9];
+        a[8] = 5;
+
+        //use for-in
+        console.log("for-in gets the index of the elements that have value");
+        var output1 = "";
+        for (let x in a) {
+            const m = 102;
+            output1 += x.toString() + " ";
+        }
+        console.log(output1);
+        //console.log(m); m has block scope!
+
+        //use for of
+        console.log("for-of gets the actual elements, including undefined");
+        var output2 = "";
+        //let x1;
+        for (let x1 of a) {
+            output2 += x1 + " ";
+        }
+        console.log(output2);
+        //console.log("x1 = " + x1); //x1 is out of scope
+
+        //use forEach
+        var output3 = "";
+        a.forEach((element) => {
+            output3 += element.toString() + " ";
+        });
+        console.log(output3);
+
+        //use iterator, seems not supported in Edge yet...?
+        //output1 = "";
+        //var entry;
+        //var it = a.values;
+        //while (!(entry = it.next()).done) {
+        //    console.log(entry.value);
+        //}
+        //console.log(output1);
+
+        var cars = [{ model: "BMW", year: 2012 },
+            { model: "Toyota", year: 2018 },
+            { model: "Benz", year: 2001 },
+            { model: "Saab", year: 2010 }];
+
+        console.log(cars.toString());
+        console.log(cars.join("-"));
+
+        (function() {            
+            if (Array.isArray(cars)) {
+                for (let i = 0; i < cars.length; i++) {
+                    console.log("now the value of the index i is " + i);
+                    document.getElementById("btn").addEventListener("click", e => {
+                        alert("now the value of the index i is " + i);
+                    });
+                    console.log(cars[i]);
+                }
+                //since let has block scope, so it is not accessible. ES6+
+                //console.log("now the value of the index i is " + i); 
+
+                let str = "";
+                cars.forEach((car, index) => {
+                    str += (car.model + " " + car.year + " at index " + index + "<br>");
+                });
+                document.getElementById("carsOutput").innerHTML = str;
+            }
+        })();
+    </script>
+</body>
+</html>

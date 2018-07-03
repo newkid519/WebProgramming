@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>HTML Responsive Web Design</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .middle {
+            background-color: white;
+            width: 60%;
+            float: left;
+            padding: 20px;
+        }
+        .left {
+            background-color: blue;
+            width: 20%;
+            float: left;
+            padding: 20px;
+        }
+        .right {
+            background-color: red;
+            width: 20%;
+            float: left;
+            padding: 20px;
+        }
+        @media screen and (max-width:800px) {
+            .left, .middle, .right {
+                width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="imgs/800x600.png" alt="800x600" style="max-width:100%;height:auto" />
+    </div>
+    <div>
+        <span style="font-size:10vw">Gallery</span>
+        <div>
+            <picture>
+                <source srcset="imgs/200x100.jpg" media="(max-width: 400px)" />
+                <source srcset="imgs/400x120.png" media="(max-width: 800px)" />
+                <source srcset="imgs/800x600.png" media="(max-width: 1200px)" />
+                <img src="imgs/1920x1080.png" style="max-width:80%;height:auto" />
+            </picture>
+        </div>
+    </div>
+    <div>
+        <span style="font-size:10vw">Flag</span>
+        <div style="width:80%;">
+            <div class="left">Left</div>
+            <div class="middle">Middle</div>
+            <div class="right">Right</div>
+        </div>        
+    </div>    
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .bold-cli {
+            margin: 5px 25px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        div > img {
+            margin: 10px 30px 5px;
+        }
+
+        a {
+            color: orangered;
+        }
+
+        a:hover {
+            font-style: italic;
+            color: forestgreen;
+        }
+        
+    </style>
+    <script>
+        function handleEvents() {
+            document.querySelector("#imgSmall").addEventListener("pointerover", () => {                
+                document.querySelector("#imgSmall").style.marginLeft = "3px";
+                console.log("poverover on imgSmall");
+            });
+            document.querySelector("#imgSmall").addEventListener("pointerover", () => {
+                document.querySelector("#imgSmall").style.marginLeft = "3px";
+                console.log("poverover again on imgSmall");
+            });
+            document.querySelector("#imgSmall").addEventListener("pointerleave", () => {
+                document.querySelector("#imgSmall").style.marginLeft = "30px";
+            });
+        }
+        window.addEventListener("load", handleEvents);
+    </script>
+</head>
+<body>
+    <h1>Clean Online App Cache</h1>
+    <div>
+        <div>
+            Sometimes, you may encounter an error when you run SMP Installer.
+        </div>
+         
+        <img id="imgSmall" src="imgs/800x600.png" /> 
+        <div>
+            To fix this, start a command shell, type the following command and then press Enter.
+            <div class="bold-cli">
+                >Rundll32 %windir%\system32\dfshim.dll CleanOnlineAppCache
+            </div>
+        </div>
+        <div>
+            We have built a utility to run this command for you. 
+            <a href="http://stackoverflow.com">Click Me!</a>
+        </div>
+    </div>
+    <div>
+        <img src="imgs/200x100.jpg" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CSS override rules and specificity</title>
+    <style>
+        th {
+            background-color: green;
+        }
+
+        table.rule1 th {
+            background-color: red;
+        }
+
+        table.rule1 tr td {
+            background-color: yellow;
+        }
+
+        table.rule1 tr td.rule2 {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://stackoverflow.com/questions/11263488/css-override-rules-and-specificity">
+        CSS override rules and specificity
+    </a>
+    <table>
+        <tr>
+            <th>
+                Header1
+            </th>
+            <th>
+                Header2
+            </th>
+        </tr>        
+        <tr>
+            <td>Value</td>
+            <td>Value</td>
+        </tr>
+    </table>
+    <table class="rule1">
+        <tr>
+            <th>
+                Header1
+            </th>
+            <th>
+                Header2
+            </th>
+        </tr>
+        <tr>
+            <td class="rule2">Special Value</td>
+            <td>Value</td>
+        </tr>
+    </table>    
+</body>
+</html>

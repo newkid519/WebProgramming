@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var tx;
+
+        console.log("324 is " + typeof 324);
+        console.log("'123' is " + typeof "123");
+        console.log("true is " + typeof true);
+        console.log("{ a: 'cd', b: 22 } is " + typeof { a: "cd", b: 22 });
+        console.log("['cd', 22] is " + typeof ["cd", 22]);
+        console.log("new Date() is " + typeof new Date());
+        console.log("tx is " + typeof tx); //undefined
+        console.log("null is " + typeof null); //object
+        console.log("function () { } is " + typeof function () { });
+
+        console.log("tx is undefined...");
+        console.log("tx == null ? " + (tx == null));
+        console.log("tx === null ? " + (tx === null));
+
+        //determined if an object is an array
+        if ((["cd", 22]).constructor.toString().indexOf("Array") > -1)
+            console.log("this is an array");
+
+        if ((["cd", 22]).constructor === Array)
+            console.log("this is an array");
+
+        //determine if an object is a Date
+        if ((new Date()).constructor === Date)
+            console.log("this is a date");
+
+        //Type conversions
+        console.log(String({ a: "cd", b: 22 }));
+        console.log(String(true));
+        console.log(true.toString());
+
+        console.log(Number("3.14") + 2);
+        console.log("3.14" + 2);
+
+        //format a Date
+        var dt = new Date();
+        console.log(dt.toLocaleDateString("en-GB") + " " + dt.toLocaleTimeString("zh-CN"));
+    </script>
+</body>
+</html>

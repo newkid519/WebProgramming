@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Error handling in JavaScript</title>
+    <script>
+        console.log("first line of head script");
+        var output1;
+        console.log(typeof output1);
+        output1 = document.querySelector("#output1");
+        console.log(output1 == null);
+        console.log(typeof output1);
+        function longRunningScript(){
+            while (1){
+
+            }
+        }
+        function eatUpMemory(){
+            console.log("eat up memory");
+            var str = new Array(1000000).join("*");
+            output1.innerHTML = str;
+        }
+        console.log("last line of head script");
+    </script>
+</head>
+<body>
+    <h1>Error &amp; Exception </h1>
+    <div>
+        <p>I have the wrong perception that JavaScript errors/exceptions are swallowed and the code can continue without leaving any noticeable trace.</p>
+    </div>
+    <h2>Hang the UI</h2>
+        <button onclick="longRunningScript()">Run long running script</button>
+    <h2>Eat up all memory</h2>
+        <button onclick="eatUpMemory()">Eat up memory</button>
+    <h2>try-catch-finally</h2>
+    <h2>throw</h2>
+    
+    <p id="output1"></p>
+    <script>
+        try{
+            console11.log("dsds");
+        }
+        catch(err){
+            console.log(err.message);
+            console.log(err.stack);
+        }
+        console.log("first line of body script");
+        output1 = document.querySelector("#output1");
+        console.log(output1 == null);
+        console.log("last line of body script");
+    </script>
+</body>
+</html>

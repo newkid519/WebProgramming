@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Position float overflow</title>
+    <style>
+        div.static{
+            border: 2px solid red;
+            position:static;
+            top:20px;
+            left:30px;
+            bottom:40px;
+            right: 50px;
+        }
+
+        div.fixed {
+            border: 2px solid yellow;
+            position: fixed;
+            bottom: 40px;
+            right: 50px;
+        }
+
+        div.relative {
+            border: 2px solid purple;
+            position: relative;
+            left: 40px;
+            top: 50px;
+        }
+
+        div.absolute {
+            border: 2px solid green;
+            position: absolute;
+            /*top: 20px;
+            left: 30px;*/
+            height:100px;
+            width: 300px;
+            bottom: 140px;
+            right: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="static">
+            Static position
+        </div>
+
+        <div class="absolute">
+            Absolute position
+        </div>
+
+        <div id="id1">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </div>
+
+        <div class="fixed">
+            Fixed position
+        </div>
+
+        <div>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </div>
+
+        <div class="relative">
+            Relative position
+        </div>
+
+        <div>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </div>
+    </div>
+
+    <div>
+        <img src="imgs/400x120.png" style="float:left" />
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <p style="float:left">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla.
+        </p>
+    </div>
+
+    <script>
+                                                /*default position is...?*/
+                                                //console.log(document.querySelector("#id1").style.position);
+    </script>
+</body>
+</html>
+

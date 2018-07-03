@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <a href="https://stackoverflow.com/questions/1068834/object-comparison-in-javascript">
+    Object comparison in JavaScript</a>
+    <script>
+        function compare(o1, o2) {
+            for (let p in o1) {
+                if (o1.hasOwnProperty(p)) {
+                    if (o1[p] !== o2[p])
+                        return false;
+                }
+            }
+            for (let p in o2) {
+                if (o2.hasOwnProperty(p)) {
+                    if (o1[p] !== o2[p])
+                        return false;
+                }
+            }
+            return true;
+        }
+
+        var o1 = { a: 22, b: "some value" };
+        var o2 = { a: 22, b: "some value" };
+
+        var o21 = { b: "some value", a: 22, c: true };        
+        
+        console.log(o1 == o2); //gives false
+        console.log(o1 === o2); //also gives false;
+
+        console.log(JSON.stringify(o1) === JSON.stringify(o2)); //true
+        console.log(JSON.stringify(o1) === JSON.stringify(o21)); //attention! also false, the order of the properties matters
+
+        console.log(compare(o1, o2));
+        console.log(compare(o1, o21));
+    </script>
+</body>
+</html>

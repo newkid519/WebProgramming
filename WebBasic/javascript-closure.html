@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id="output"></p>
+		<script>
+			var add = (function() {
+				var counter = 0;
+				return function() {
+					return counter += 1;					
+				}
+			})();
+			
+			add();
+			add();
+			add();
+			document.getElementById("output").innerHTML = add();
+		</script>
+	</body>
+</html>

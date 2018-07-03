@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="./css/jss.css" type="text/css" rel="stylesheet" />
+    <title>JavaScript constructor</title>
+</head>
+<body>
+    <h1>JavaScript constructor</h1>
+    <script>
+        function MyFriend(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;                       
+        }
+
+        function introduce() {
+            var gen = (this.sex === true)? "malex":"femalex";
+            
+            console.log("My friend " + this.name + ", " +
+                gen + ", " +
+                this.age);
+        } 
+
+        var a = new MyFriend('X', 35, true);
+        //a.sex = false;
+        a.edu = "xju";
+        introduce.apply(a);
+        for (let p in a)
+            console.log(a[p]);
+
+    </script>
+</body>
+</html>

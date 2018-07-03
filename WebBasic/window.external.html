@@ -1,0 +1,19 @@
+<!DocType HTML>
+<html>
+<head>
+	<title>Window external</title>
+    <style type="text/css">
+	</style>
+</head>
+	
+<body>
+	<script>	    	    
+		console.log(external.getHostEnvironmentValue('os-sku'));
+		console.log(typeof(window.external));
+		for (p in window.external)
+		{
+			console.log(p);
+		}
+	</script>
+</body>
+</html>
