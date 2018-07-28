@@ -1,0 +1,66 @@
+<html>
+<head>
+	<script>
+		function validateForm(){
+			var x = document.forms["myform"]["firstname"].value;
+			if (x == ""){
+				alert("Name must be filled out");
+				return false;
+			}
+		}
+	</script>
+	<style>
+		.centerFlex {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+		}
+
+		th{
+			background-color: rgb(37, 77, 88); 
+			color: white;
+			text-align: left;
+		}
+		label{
+			/* text-align: right; */
+			margin-right: 25px;
+		}
+	</style>
+</head>
+<body>
+<div class="centerFlex">
+	<form name="myform" action="http://kennyzx.com/controller/newuser" 
+		method="post" onsubmit="return validateForm()">
+		<P>
+			<table style="background-color: lightgray">
+				<tr><th>Label</th><th>Value</th></tr>
+				<tr>
+					<td> <Label for="r1">Male<Label> </td>
+					<td> <Input type="radio" name="sex" value="MALE" id="r1"> </td>
+				</tr>
+				<tr>
+					<td> <Label for="r2">Female<Label> </td>
+					<td> <Input type="radio" name="sex" value="FEMALE" id="r2"> </td>
+				</tr>
+				<tr>
+					<td> <Label for="firstname">First Name</Label> </td>
+					<td> <Input type="text" id="firstname" name="firstname"> </td>
+				</tr>
+				<tr>
+					<td> <Label for="lastname">Last Name</Label> </td>
+					<td> <Input type="text" id="lastname" name="lastname"> </td>
+				</tr>
+			</table>
+			
+			<!--Label for="firstname">First Name</Label>
+			<Input type="text" id="firstname" name="firstname"> <BR>
+			<Label for="lastname">Last Name</Label>
+			<Input type="text" id="lastname" name="lastname"> <BR-->
+			
+			<Input type="submit" value="Send">
+			<Input type="reset">
+		</P>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+ <head>
+    <style>
+        .container {
+            height: 300px;
+            background-color: blueviolet;
+            flex-direction: row;
+            display: flex; /* or inline-flex */
+            flex-wrap: wrap;
+        }
+        .item {
+            background-color: darkgreen;
+            margin: 12px 3px 7px 9px;
+            padding: 5px;
+        }
+    </style>
+ </head>
+ <body>
+    <div class="container" >
+        <div class="item">
+            <p style="color: white">hello world</p>
+        </div>
+        <div class="item">
+            <p style="color: yellow">hello world tony!</p>
+        </div>
+        <div class="item" >
+            <p style="color: whitesmoke">A quick brown fox <br>jumps over the lazy dog.</p>
+        </div>
+        <div class="item" >
+            <p style="color: red">A quick brown fox jumps over the lazy dog.</p>
+        </div>
+    </div>
+    <div class="container" style="flex-direction: row-reverse;justify-content:center;align-items:center;align-content: stretch">
+            <div class="item" >
+                <p style="color: white">hello world</p>
+            </div>
+            <div class="item">
+                <p style="color: yellow">hello world tony!</p>
+            </div>
+            <div class="item">
+                <p style="color: whitesmoke">A quick brown fox <br>jumps over the lazy dog.</p>
+            </div>
+        </div>
+ </body>
+</html>
+
