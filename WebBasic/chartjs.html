@@ -1,0 +1,48 @@
+<!doctype <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Use Chart.js</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>        
+    </head>
+    <body style="width:75%;background-color: lightgray">
+        <canvas id="chartJSContainer" width="600" height="400"></canvas>
+        <script>
+            var barchartdata = {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: "My Dataset 1",
+                    data: 
+                    [ 
+                        0.2, 1.0, 2.4, 22, -31, 11
+                    ],
+                    fill: true,
+                    borderColor: "red",
+                    borderWidth: 1,
+                    backgroundColor: "green"
+                }]
+            };
+            var options = {
+                type: "bar",
+                data: barchartdata,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top'
+                    },
+                    title: {
+                        display: true,
+                        text: "My Bar chart"
+                    }                    
+                }
+            };
+    
+            var ctx = document.getElementById('chartJSContainer').getContext('2d');
+            new Chart(ctx, options);
+        </script>
+    </body>
+</html>
+
