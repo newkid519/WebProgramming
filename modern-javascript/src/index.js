@@ -5,4 +5,5 @@ import sha1 from "js-sha1"
 import $ from 'jquery'; 
 window.jQuery = $;
 window.$ = $;
-console.log(sha1(""));
+
+export function getSha1(s) { return `${new Date().toString()}  ${sha1(s)};`}
